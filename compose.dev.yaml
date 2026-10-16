@@ -1,0 +1,28 @@
+services:
+  portfolio:
+    build:
+      context: .
+      target: development
+    ports:
+      - '127.0.0.1:${PORT:-3000}:3000'
+    environment:
+      NEXT_TELEMETRY_DISABLED: '1'
+      WATCHPACK_POLLING: 'true'
+      NEXT_PUBLIC_TRENDS_API_BASE: 'http://localhost:8000'
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./next.config.mjs:/app/next.config.mjs:ro
+      - ./jsconfig.json:/app/jsconfig.json:ro
+    init: true
+  trends-api:
+    build:
+      context: ./services/trends-api
+    ports:
+      - '127.0.0.1:8000:8000'
+    environment:
+      CORS_ORIGIN: 'http://localhost:${PORT:-3000}'
+    volumes:
+      - ./services/trends-api/src:/app/src:ro
+    command: ['node', '--watch', 'src/server.js']
+    init: true

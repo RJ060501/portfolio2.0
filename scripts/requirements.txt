@@ -1,0 +1,2 @@
+# Only needed to regenerate the optional PDF resume; the website has no Python runtime.
+reportlab>=4.0,<5.0

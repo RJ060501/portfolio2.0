@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.openai/
+.sites-runtime/
+package-lock.json
+public/
+scripts/fonts/
+*.zip
+*.tar.gz

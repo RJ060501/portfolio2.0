@@ -1,0 +1,89 @@
+.detailpage {
+  max-width: 1040px;
+  padding-top: 40px;
+}
+.backlink {
+  font: 11px var(--mono);
+  color: var(--muted);
+  display: inline-block;
+  margin-bottom: 65px;
+}
+.backlink:hover {
+  color: var(--accent);
+}
+.detailpage h1 {
+  font-size: clamp(42px, 5vw, 68px);
+  max-width: 850px;
+  margin-top: 23px;
+}
+.detailsummary {
+  font-size: 20px;
+  max-width: 750px;
+  line-height: 1.7;
+  margin-top: 22px;
+}
+.detailmeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.7fr;
+  gap: 30px;
+  border-block: 1px solid var(--line);
+  padding-block: 24px;
+  margin-top: 37px;
+}
+.detailmeta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+.detailmeta small {
+  font: 9px var(--mono);
+  color: #8fa085;
+  letter-spacing: 1px;
+}
+.projectactions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.storygrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-top: 80px;
+}
+.storylabel {
+  font: 10px/1.9 var(--mono);
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.storygrid section {
+  margin-bottom: 32px;
+}
+.storygrid h2 {
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+.storygrid p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+.demosection {
+  margin-top: 45px;
+}
+.demosection h2 {
+  font-size: 40px;
+  margin-top: 15px;
+}
+.demonote {
+  font-size: 13px;
+  max-width: 780px;
+  margin: 17px 0 25px;
+  line-height: 1.8;
+}
+.algorithmnotes { border-left: 3px solid var(--accent); padding: 23px 30px; margin: 25px 0 46px; background: #233021; }
+.algorithmnotes h2 { font-size: 25px; margin-bottom: 15px; }
+.algorithmnotes p { font-size: 13px; line-height: 1.9; margin-top: 12px; }

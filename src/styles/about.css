@@ -1,0 +1,107 @@
+.aboutsection {
+  background: #19201a;
+  border-block: 1px solid var(--line);
+  padding-block: 100px;
+}
+.aboutgrid {
+  display: grid;
+  grid-template-columns: 1fr 1.17fr;
+  gap: 90px;
+}
+.aboutcopy {
+  padding-top: 30px;
+}
+.aboutcopy p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+.aboutcopy p.lead {
+  font-size: 23px;
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+.outdoorart {
+  color: #819b65;
+  max-width: 355px;
+  margin-top: 28px;
+}
+.outdoorart svg {
+  width: 100%;
+  height: auto;
+}
+.outdoorart span {
+  font: 8px var(--mono);
+  letter-spacing: 1px;
+  color: #819174;
+}
+.interestrow {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font: 10px var(--mono);
+  color: var(--accent);
+  padding-block: 5px 27px;
+}
+.textlink {
+  display: inline-flex;
+  gap: 35px;
+  font-size: 13px;
+  border-bottom: 1px solid #78915b;
+  padding-bottom: 5px;
+  color: var(--text);
+}
+.textlink:hover {
+  color: var(--accent);
+}
+.experiencerow {
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr 25px;
+  gap: 27px;
+  padding-block: 30px;
+  border-top: 1px solid var(--line);
+  align-items: flex-start;
+}
+.experiencedate,
+.company {
+  font: 10px/1.7 var(--mono);
+  color: var(--muted);
+}
+.company {
+  color: var(--accent);
+}
+.experiencerow h3 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  margin-top: 8px;
+}
+.experiencerow p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.expnumber {
+  font: 10px var(--mono);
+  color: #5f705e;
+}
+.certrow {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 45px;
+}
+.certrow > span {
+  font: 9px/1.8 var(--mono);
+  color: #81917e;
+  max-width: 140px;
+}
+.certrow > div {
+  display: flex;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #bac7b3;
+}

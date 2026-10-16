@@ -1,0 +1,27 @@
+services:
+  portfolio:
+    build:
+      context: .
+      target: production
+    depends_on:
+      trends-api:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:${PORT:-3000}:8080'
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+  trends-api:
+    build:
+      context: ./services/trends-api
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped

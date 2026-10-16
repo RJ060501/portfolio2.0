@@ -1,0 +1,21 @@
+# Optional production overlay after domain DNS is configured.
+# docker compose -f compose.yaml -f compose.aws.yaml up -d --build
+services:
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAIN: '${DOMAIN:?Set DOMAIN in .env and point its DNS A record at the EC2 IP}'
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      portfolio:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,650 @@
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (min-width: 1450px) {
+  .hero {
+    min-height: 780px;
+  }
+  .herovisual {
+    height: 600px;
+  }
+  .systemcard {
+    top: 225px;
+  }
+  .hero h1 {
+    font-size: 76px;
+  }
+}
+@media (max-width: 1000px) {
+  .wrap {
+    width: calc(100% - 64px);
+  }
+  .hero {
+    grid-template-columns: 1.1fr 1fr;
+    min-height: 650px;
+    padding-block: 40px;
+  }
+  .hero h1 {
+    font-size: 50px;
+  }
+  .herovisual {
+    height: 515px;
+  }
+  .systemcard {
+    left: 3%;
+    right: 0;
+    top: 180px;
+  }
+  .systembody {
+    padding: 17px 16px;
+    font-size: 10px;
+  }
+  .systembody > div {
+    font-size: 14px;
+  }
+  .visualcoords {
+    font-size: 6px;
+    left: 8px;
+  }
+  .visualfoot {
+    font-size: 6px;
+    left: 8px;
+  }
+  .herodesc {
+    font-size: 15px;
+  }
+  .location {
+    font-size: 8px;
+    gap: 7px;
+  }
+  .navlinks {
+    gap: 20px;
+    font-size: 12px;
+  }
+  .heroactions .button {
+    padding: 11px 15px;
+    gap: 15px;
+  }
+  .art {
+    padding: 23px 20px;
+    height: 280px;
+  }
+  .ministats {
+    gap: 15px;
+  }
+  .artrow {
+    font-size: 7px;
+  }
+  .chatanswer p {
+    font-size: 9px;
+  }
+  .chatbubble {
+    font-size: 9px;
+    margin-left: 10px;
+  }
+  .aboutgrid {
+    gap: 50px;
+  }
+  .experiencerow {
+    grid-template-columns: 115px 1fr 1fr;
+    gap: 20px;
+  }
+  .expnumber {
+    display: none;
+  }
+  .project h3 {
+    font-size: 20px;
+  }
+  .stackstrip b {
+    font-size: 15px;
+  }
+  .footer {
+    flex-wrap: wrap;
+  }
+  .detailpage {
+    max-width: 850px;
+  }
+  .storygrid {
+    gap: 35px;
+    grid-template-columns: 0.7fr 2fr;
+  }
+}
+@media (max-width: 720px) {
+  .wrap {
+    width: calc(100% - 40px);
+  }
+  .nav {
+    height: 74px;
+  }
+  .brand {
+    font-size: 16px;
+  }
+  .brandmark {
+    font-size: 31px;
+  }
+  .menu {
+    display: flex;
+    background: none;
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    gap: 20px;
+    font-size: 12px;
+  }
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: #19211c;
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .navlinks.open {
+    display: flex;
+  }
+  .navlinks > a {
+    padding: 12px 8px;
+    font-size: 15px;
+  }
+  .navlinks .navcontact {
+    margin-top: 10px;
+    padding: 12px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-top: 45px;
+    padding-bottom: 35px;
+  }
+  .hero h1 {
+    font-size: clamp(43px, 9.4vw, 65px);
+    margin-block: 23px;
+  }
+  .hero .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .herodesc {
+    max-width: 480px;
+    font-size: 15px;
+  }
+  .heroactions {
+    margin-top: 26px;
+  }
+  .heroactions .button {
+    font-size: 12px;
+    padding: 12px 18px;
+  }
+  .location {
+    font-size: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .herovisual {
+    height: 435px;
+    max-width: 530px;
+    width: 100%;
+    margin-top: 10px;
+    border-left: none;
+  }
+  .visualcoords {
+    font-size: 7px;
+    top: 9px;
+    left: 5px;
+  }
+  .terrain {
+    top: -50px;
+    height: 510px;
+  }
+  .systemcard {
+    left: 9%;
+    right: 7%;
+    top: 137px;
+  }
+  .systembody {
+    padding: 15px 20px;
+    font-size: 10px;
+  }
+  .systembody > div {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .systembody ul {
+    margin-top: 6px;
+  }
+  .systembody li {
+    padding: 3px 0;
+  }
+  .visualtag {
+    top: 40px;
+    font-size: 8px;
+    right: 5px;
+  }
+  .visualfoot {
+    font-size: 7px;
+    left: 5px;
+  }
+  .stackstrip > .wrap {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px 25px;
+    padding-block: 20px;
+  }
+  .stackstrip span {
+    flex-basis: 100%;
+    max-width: none;
+    font-size: 8px;
+  }
+  .stackstrip b {
+    font-size: 13px;
+  }
+  .section {
+    padding-top: 65px;
+    padding-bottom: 60px;
+  }
+  .sectionhead {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 28px;
+  }
+  .sectionhead h2,
+  .aboutgrid h2 {
+    font-size: 39px;
+    margin-top: 15px;
+  }
+  .sectionhead > p {
+    font-size: 13px;
+  }
+  .eyebrow {
+    font-size: 9px;
+  }
+  .filters {
+    gap: 7px;
+    margin-bottom: 26px;
+  }
+  .filters button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .filters button span {
+    margin-left: 7px;
+  }
+  .projectgrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .art {
+    height: 290px;
+    padding: 25px 24px;
+  }
+  .ministats small {
+    font-size: 7px;
+  }
+  .chart {
+    height: 65px;
+  }
+  .artrow {
+    font-size: 8px;
+  }
+  .projectmeta {
+    font-size: 7px;
+    margin-top: 17px;
+  }
+  .project h3 {
+    font-size: 22px;
+  }
+  .project > p {
+    font-size: 13px;
+  }
+  .tags {
+    margin-top: 13px;
+  }
+  .tags span {
+    font-size: 8px;
+  }
+  .resultcount {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .chatanswer p {
+    font-size: 10px;
+  }
+  .chatbubble {
+    font-size: 10px;
+    margin-left: 22px;
+  }
+  .aboutsection {
+    padding-block: 65px;
+  }
+  .aboutgrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .aboutgrid h2 br:nth-of-type(2) {
+    display: none;
+  }
+  .outdoorart {
+    max-width: 340px;
+    margin-top: 20px;
+  }
+  .aboutcopy {
+    padding-top: 0;
+  }
+  .aboutcopy p.lead {
+    font-size: 22px;
+  }
+  .aboutcopy p {
+    font-size: 14px;
+  }
+  .interestrow {
+    font-size: 9px;
+    gap: 18px;
+  }
+  .experiencerow {
+    grid-template-columns: 1fr;
+    padding-block: 23px;
+    gap: 9px;
+  }
+  .experiencedate {
+    font-size: 9px;
+  }
+  .company {
+    font-size: 10px;
+  }
+  .experiencerow h3 {
+    font-size: 20px;
+    margin-top: 4px;
+  }
+  .experiencerow p {
+    font-size: 13px;
+    max-width: 500px;
+  }
+  .certrow {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .certrow > span {
+    max-width: none;
+    font-size: 8px;
+  }
+  .certrow > div {
+    font-size: 11px;
+    gap: 10px 18px;
+  }
+  .contact {
+    padding-block: 60px;
+  }
+  .contact h2 {
+    font-size: clamp(39px, 9vw, 60px);
+    margin-block: 22px 30px;
+  }
+  .contactbottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  .contactbottom p {
+    font-size: 13px;
+  }
+  .email {
+    font-size: 19px;
+  }
+  .footer {
+    padding-block: 24px;
+    gap: 18px;
+  }
+  .footer > span {
+    font-size: 10px;
+  }
+  .footer > div {
+    flex-basis: 100%;
+    font-size: 10px;
+    gap: 27px;
+  }
+  .detailpage {
+    padding-top: 25px;
+  }
+  .backlink {
+    margin-bottom: 40px;
+    font-size: 10px;
+  }
+  .detailpage h1 {
+    font-size: 42px;
+  }
+  .detailsummary {
+    font-size: 17px;
+  }
+  .detailmeta {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .detailmeta > div:last-child {
+    grid-column: 1/-1;
+  }
+  .projectactions {
+    gap: 14px;
+  }
+  .projectactions .button {
+    font-size: 12px;
+    padding: 11px 15px;
+    gap: 10px;
+  }
+  .storygrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 50px;
+  }
+  .storylabel br {
+    display: none;
+  }
+  .storygrid h2 {
+    font-size: 23px;
+  }
+  .storygrid p {
+    font-size: 14px;
+  }
+  .storygrid section {
+    margin-bottom: 27px;
+  }
+  .demosection {
+    margin-top: 22px;
+  }
+  .demosection h2 {
+    font-size: 33px;
+  }
+  .demonote {
+    font-size: 12px;
+  }
+  .demobar {
+    padding: 15px;
+    font-size: 12px;
+    align-items: flex-start;
+  }
+  .demobadge {
+    font-size: 6px;
+    max-width: 145px;
+    text-align: right;
+  }
+  .demostats {
+    padding: 16px;
+  }
+  .demostats > div {
+    padding-left: 14px;
+  }
+  .demostats strong {
+    font-size: 26px;
+  }
+  .demostats span {
+    font-size: 9px;
+  }
+  .demofilter {
+    padding: 14px;
+    gap: 10px;
+    font-size: 10px;
+  }
+  .demofilter select {
+    font-size: 11px;
+    padding: 7px;
+  }
+  .triagegrid {
+    grid-template-columns: 1fr;
+  }
+  .eventlist {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    overflow: auto;
+    gap: 7px;
+    padding: 10px;
+  }
+  .event {
+    min-width: 210px;
+    margin-bottom: 0;
+    padding: 12px;
+  }
+  .eventdetail {
+    padding: 22px 18px;
+  }
+  .eventdetail h3 {
+    font-size: 22px;
+  }
+  .eventdetail .eyebrow {
+    font-size: 8px;
+  }
+  .scrapercontrols {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 14px;
+  }
+  .searchcount {
+    margin: 0 18px 15px;
+    font-size: 9px;
+  }
+  .sampleresults {
+    padding: 0 18px 18px;
+  }
+  .sampleresults h3 {
+    font-size: 18px;
+  }
+  .sampleresults p {
+    font-size: 12px;
+  }
+  .conversation {
+    padding: 17px;
+  }
+  .message {
+    max-width: 94%;
+    padding: 12px 15px;
+  }
+  .message p {
+    font-size: 12px;
+  }
+  .promptoptions {
+    padding: 5px 17px 17px;
+  }
+  .promptoptions button {
+    font-size: 10px;
+  }
+  .gamebottom {
+    padding: 20px 15px;
+    gap: 18px;
+  }
+  .gamebottom p {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .gameoverlay > strong {
+    font-size: 24px;
+  }
+  .nextproject {
+    margin-top: 55px;
+    padding-block: 35px;
+  }
+  .nextproject strong {
+    font-size: 22px;
+  }
+  .resumepage {
+    padding-block: 45px;
+  }
+  .resumepage h1 {
+    font-size: 48px;
+  }
+  .resumesheet {
+    padding: 30px 23px;
+  }
+  .resumesheet header h2 {
+    font-size: 30px;
+  }
+  .resumerole {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .resumesheet p {
+    font-size: 12px;
+  }
+  .resumesheet h4 {
+    font-size: 13px;
+  }
+  .notfound h1 {
+    font-size: 43px;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .button:hover {
+    transform: none;
+  }
+  .artlink:hover .art {
+    transform: none;
+  }
+}
+@media print {
+  .header,
+  .footer,
+  .sectionhead .button,
+  .skip {
+    display: none;
+  }
+  .resumepage {
+    width: 100%;
+    padding: 0;
+  }
+  .resumepage > .sectionhead {
+    display: none;
+  }
+  .resumesheet {
+    padding: 0;
+    background: white;
+    color: black;
+  }
+  .resumesheet p {
+    color: #222;
+  }
+  .resumesheet section {
+    break-inside: avoid;
+  }
+  body {
+    background: white;
+  }
+  .resumesheet a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+.sites-runtime/
+.env*
+*.tar.gz
+
+.venv/
+__pycache__/
+*.pyc
+*.zip
+*.log

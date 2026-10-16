@@ -1,0 +1,5 @@
+# Set DOMAIN to the exact hostname pointing at the EC2 public IP.
+{$DOMAIN} {
+    encode zstd gzip
+    reverse_proxy portfolio:8080
+}

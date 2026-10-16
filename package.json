@@ -1,0 +1,23 @@
+{
+  "name": "ryan-russell-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test tests/snake.test.mjs && npm --prefix services/trends-api test"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
