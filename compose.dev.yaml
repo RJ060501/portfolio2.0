@@ -22,7 +22,12 @@ services:
       - '127.0.0.1:8000:8000'
     environment:
       CORS_ORIGIN: 'http://localhost:${PORT:-3000}'
+      DB_PATH: /data/trends.sqlite
+      OLLAMA_ENABLED: 'false'
     volumes:
       - ./services/trends-api/src:/app/src:ro
+      - trends_dev_data:/data
     command: ['node', '--watch', 'src/server.js']
     init: true
+volumes:
+  trends_dev_data:

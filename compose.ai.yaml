@@ -1,0 +1,17 @@
+# Optional local AI extension. The Ollama API is not exposed to the host.
+# docker compose -f compose.yaml -f compose.ai.yaml --profile ai up --build -d --wait
+services:
+  trends-api:
+    environment:
+      OLLAMA_ENABLED: 'true'
+      OLLAMA_URL: http://ollama:11434
+      OLLAMA_MODEL: '${OLLAMA_MODEL:-llama3.2:3b}'
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ['ai']
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    # No ports: the model is only reachable on Compose's private network.
+volumes:
+  ollama_models:

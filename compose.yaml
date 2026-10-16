@@ -19,9 +19,17 @@ services:
   trends-api:
     build:
       context: ./services/trends-api
+    environment:
+      DB_PATH: /data/trends.sqlite
+      TRUST_PROXY: 'true'
+      OLLAMA_ENABLED: 'false'
+    volumes:
+      - trends_data:/data
     read_only: true
     security_opt:
       - no-new-privileges:true
     cap_drop:
       - ALL
     restart: unless-stopped
+volumes:
+  trends_data:

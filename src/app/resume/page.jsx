@@ -1,10 +1,10 @@
 export const metadata = {
-  title: "Résumé",
+  title: 'Résumé',
   description: "View and download Ryan Russell's professional résumé.",
 };
 
 export default function Resume() {
-  const resumePath = "/RRResume.pdf";
+  const resumePath = '/RRResume.pdf';
 
   return (
     <main id="main" className="wrap resumepage">
@@ -17,8 +17,7 @@ export default function Resume() {
           </h1>
 
           <p>
-            Explore my professional experience, education,
-            technical skills, and certifications.
+            Explore my professional experience, education, technical skills, and certifications.
           </p>
         </div>
 
@@ -33,20 +32,16 @@ export default function Resume() {
           title="Ryan Russell - Professional Résumé"
           className="resume-pdf-viewer"
           style={{
-            width: "100%",
-            height: "90vh",
-            minHeight: "800px",
-            border: "none",
+            width: '100%',
+            height: '90vh',
+            minHeight: '800px',
+            border: 'none',
           }}
         />
 
         <p className="resume-pdf-fallback">
-          Having trouble viewing the PDF?{" "}
-          <a
-            href={resumePath}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          Having trouble viewing the PDF?{' '}
+          <a href={resumePath} target="_blank" rel="noopener noreferrer">
             Open résumé in a new tab ↗
           </a>
         </p>
