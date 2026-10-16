@@ -1,8 +1,8 @@
 {
   "name": "ryan-tech-trends-api",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "A small news discovery REST API with cached upstream sources and honest error handling",
+  "description": "Article analysis, optional local Ollama enrichment, and observed technology trend history",
   "engines": {
     "node": ">=22"
   },
