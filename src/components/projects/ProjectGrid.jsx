@@ -34,9 +34,14 @@ export default function ProjectGrid({ featured = false }) {
   }, [featured]);
 
   function navigate(nextPage, nextCategory) {
-    const max = Math.max(1, Math.ceil(projects.filter(
-      (project) => nextCategory === 'All work' || project.category === nextCategory,
-    ).length / PAGE_SIZE));
+    const max = Math.max(
+      1,
+      Math.ceil(
+        projects.filter(
+          (project) => nextCategory === 'All work' || project.category === nextCategory,
+        ).length / PAGE_SIZE,
+      ),
+    );
     const safePage = Math.max(1, Math.min(max, nextPage));
     setPage(safePage);
     setCategory(nextCategory);
@@ -49,12 +54,14 @@ export default function ProjectGrid({ featured = false }) {
     document.getElementById('project-list')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
-  const filtered = featured ? projects.slice(0, 4) : projects.filter(
-    (project) => category === 'All work' || project.category === category,
-  );
+  const filtered = featured
+    ? projects.slice(0, 4)
+    : projects.filter((project) => category === 'All work' || project.category === category);
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
-  const visible = featured ? filtered : filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const visible = featured
+    ? filtered
+    : filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   return (
     <div id="project-list">
@@ -82,7 +89,11 @@ export default function ProjectGrid({ featured = false }) {
       {!featured && (
         <>
           <div className="pagination" aria-label="Project pages">
-            <button type="button" disabled={currentPage === 1} onClick={() => navigate(currentPage - 1, category)}>
+            <button
+              type="button"
+              disabled={currentPage === 1}
+              onClick={() => navigate(currentPage - 1, category)}
+            >
               ← Previous
             </button>
             {Array.from({ length: totalPages }, (_, index) => (
@@ -97,12 +108,19 @@ export default function ProjectGrid({ featured = false }) {
                 {index + 1}
               </button>
             ))}
-            <button type="button" disabled={currentPage === totalPages} onClick={() => navigate(currentPage + 1, category)}>
+            <button
+              type="button"
+              disabled={currentPage === totalPages}
+              onClick={() => navigate(currentPage + 1, category)}
+            >
               Next →
             </button>
           </div>
           <p className="resultcount" role="status">
-            Showing {filtered.length ? (currentPage - 1) * PAGE_SIZE + 1 : 0}–{Math.min(currentPage * PAGE_SIZE, filtered.length)} of {filtered.length} projects · Page {currentPage} of {totalPages}. Interactive demos are labeled separately from original work.
+            Showing {filtered.length ? (currentPage - 1) * PAGE_SIZE + 1 : 0}–
+            {Math.min(currentPage * PAGE_SIZE, filtered.length)} of {filtered.length} projects ·
+            Page {currentPage} of {totalPages}. Interactive demos are labeled separately from
+            original work.
           </p>
         </>
       )}

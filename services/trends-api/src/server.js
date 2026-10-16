@@ -6,7 +6,11 @@ const port = Number(process.env.PORT || 8000);
 const allowedOrigin = process.env.CORS_ORIGIN || '';
 
 function json(response, status, payload) {
-  response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+  response.writeHead(status, {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'no-store',
+    'X-Content-Type-Options': 'nosniff',
+  });
   response.end(JSON.stringify(payload));
 }
 
@@ -24,7 +28,13 @@ export function makeHandler(feedService = service) {
     const topic = url.searchParams.get('topic') || 'all';
     const query = (url.searchParams.get('query') || '').trim();
     const limit = url.searchParams.get('limit') || '20';
-    if (!Object.hasOwn(TOPICS, topic) || query.length > 100 || !/^\d+$/.test(limit) || Number(limit) < 1 || Number(limit) > 50) {
+    if (
+      !Object.hasOwn(TOPICS, topic) ||
+      query.length > 100 ||
+      !/^\d+$/.test(limit) ||
+      Number(limit) < 1 ||
+      Number(limit) > 50
+    ) {
       return json(response, 400, { error: 'Invalid topic, query, or limit' });
     }
     try {

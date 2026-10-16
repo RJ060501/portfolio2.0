@@ -27,15 +27,19 @@ export const projects = [
     category: 'Development',
     tag: 'Live-data API',
     demo: 'trends',
-    summary: 'A personal tech-news API that gathers and filters recent engineering headlines for ongoing learning.',
+    summary:
+      'A personal tech-news API that gathers and filters recent engineering headlines for ongoing learning.',
     stack: ['Node.js', 'REST APIs', 'Caching', 'Docker'],
     status: 'Version 2 implemented · deployment pending',
     role: 'Backend engineering & integration',
     repo: 'https://github.com/RJ060501/tech-trends-api',
     repoLabel: 'Original API repository ↗',
-    problem: 'To answer “How do you stay current with technology?” with something more useful than a reading list, I built an API to find articles. My original implementation scraped arbitrary links from two static webpages; it lacked reliable dates, relevance filters, and failure handling.',
-    approach: 'I refactored the proof of concept into a Node.js REST service using the Hacker News Algolia and DEV Community JSON APIs. It normalizes published timestamps and sources, deduplicates URLs, filters topics and queries, caches successful results, and handles partial upstream failures and timeouts. The React demo consumes the API through an Nginx reverse proxy when deployed.',
-    outcome: 'The upgraded project can power a repeatable personal reading workflow across AI, cloud, security, and software engineering. It demonstrates integration design, defensive input validation, caching, service health checks, and automated tests—not just a frontend list of articles.',
+    problem:
+      'To answer “How do you stay current with technology?” with something more useful than a reading list, I built an API to find articles. My original implementation scraped arbitrary links from two static webpages; it lacked reliable dates, relevance filters, and failure handling.',
+    approach:
+      'I refactored the proof of concept into a Node.js REST service using the Hacker News Algolia and DEV Community JSON APIs. It normalizes published timestamps and sources, deduplicates URLs, filters topics and queries, caches successful results, and handles partial upstream failures and timeouts. The React demo consumes the API through an Nginx reverse proxy when deployed.',
+    outcome:
+      'The upgraded project can power a repeatable personal reading workflow across AI, cloud, security, and software engineering. It demonstrates integration design, defensive input validation, caching, service health checks, and automated tests—not just a frontend list of articles.',
     next: 'Deploy the combined site and API, refine article relevance, and optionally add saved reading lists and digests. A live production feed is not claimed until the public endpoint is operational.',
     note: 'The v2 implementation is included in this updated portfolio source, but is not yet pushed to the original API repository. The live mode requires a running Node API; fictional sample records are clearly labeled. No AI summaries are fabricated.',
   },
@@ -46,14 +50,18 @@ export const projects = [
     category: 'Cloud & AI',
     tag: 'Infrastructure as code',
     demo: null,
-    summary: 'Provisioning a real EC2 instance with declarative Terraform, then exploring a repeatable deployment for this portfolio.',
+    summary:
+      'Provisioning a real EC2 instance with declarative Terraform, then exploring a repeatable deployment for this portfolio.',
     stack: ['Terraform', 'AWS EC2', 'Infrastructure as Code', 'Linux'],
     status: 'Original EC2 lab stopped · deployment planned',
     role: 'Infrastructure provisioning',
     repo: 'https://github.com/RJ060501/terraform-cloud-project',
-    problem: 'I wanted practical evidence that I could provision cloud infrastructure, not just describe EC2 concepts. The first lab deliberately focused on the smallest useful resource.',
-    approach: 'I wrote Terraform configuration for an AWS t3.micro EC2 instance in us-east-1 and an output exposing its public IP. I used the Terraform plan/apply workflow, then stopped the instance when it was no longer needed. It did not serve an application.',
-    outcome: 'This work demonstrates basic EC2 and Terraform resource configuration. It is not evidence of a previously hosted website, a production-grade network, or a production deployment.',
+    problem:
+      'I wanted practical evidence that I could provision cloud infrastructure, not just describe EC2 concepts. The first lab deliberately focused on the smallest useful resource.',
+    approach:
+      'I wrote Terraform configuration for an AWS t3.micro EC2 instance in us-east-1 and an output exposing its public IP. I used the Terraform plan/apply workflow, then stopped the instance when it was no longer needed. It did not serve an application.',
+    outcome:
+      'This work demonstrates basic EC2 and Terraform resource configuration. It is not evidence of a previously hosted website, a production-grade network, or a production deployment.',
     next: 'The portfolio repository now includes a separate, optional AWS deployment example for a Dockerized website and trends API. Connecting a domain, securing HTTPS, applying the plan, and monitoring the deployment remain operational steps—not completed work.',
     note: 'The uploaded Terraform lab provisions one instance only. An accompanying deployment blueprint lives in this portfolio source repository; it has not been applied to an AWS account.',
   },

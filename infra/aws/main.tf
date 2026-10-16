@@ -73,7 +73,7 @@ resource "aws_instance" "portfolio" {
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.portfolio.id]
   key_name                    = var.ssh_key_name
-  monitoring                  = false  # Avoid paid detailed monitoring for a small learning deployment.
+  monitoring                  = false # Avoid paid detailed monitoring for a small learning deployment.
   metadata_options {
     http_tokens = "required"
   }

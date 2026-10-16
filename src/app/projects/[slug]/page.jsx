@@ -93,8 +93,16 @@ export default async function ProjectPage({ params }) {
       {project.slug === 'snake' && (
         <aside className="algorithmnotes" aria-label="Algorithm design notes">
           <h2>What the game loop proves</h2>
-          <p>At every tick, the engine computes a new head position in O(1), checks collision against the body in O(n), and returns a fresh immutable state. Reversal rules avoid invalid 180° turns; food is sampled only from free cells. Node tests cover movement, growth, body collisions, wall collisions, and immutability.</p>
-          <p>The original Snake was a Python project. This interactive game uses a separate, tested JavaScript implementation so the same ideas work directly in your browser.</p>
+          <p>
+            At every tick, the engine computes a new head position in O(1), checks collision against
+            the body in O(n), and returns a fresh immutable state. Reversal rules avoid invalid 180°
+            turns; food is sampled only from free cells. Node tests cover movement, growth, body
+            collisions, wall collisions, and immutability.
+          </p>
+          <p>
+            The original Snake was a Python project. This interactive game uses a separate, tested
+            JavaScript implementation so the same ideas work directly in your browser.
+          </p>
         </aside>
       )}
       {project.demo ? (

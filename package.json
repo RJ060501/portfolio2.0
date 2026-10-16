@@ -7,6 +7,7 @@
     "build": "next build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "lint": "eslint .",
     "test": "node --test tests/snake.test.mjs && npm --prefix services/trends-api test"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.28",
     "prettier": "3.6.2"
   },
   "engines": {

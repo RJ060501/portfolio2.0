@@ -19,6 +19,7 @@ Requires Node.js 22+.
 
 ```bash
 npm ci
+npm run lint
 npm test
 npm run dev
 ```
@@ -84,20 +85,21 @@ Suggested interview explanation: “To keep up with changes in cloud, security, 
 
 ## Structure and validation
 
-| Path | Purpose |
-| --- | --- |
-| `src/app/` | Stateless Next.js route files for Home, Work, About, Contact, Resume, and each project |
-| `src/content/projects.js` | Accurate project cases, technologies, status, and source links |
-| `src/components/projects/` | Artworks, paginated/filterable cards, interactive demo selection |
-| `src/features/snake/` | Pure game engine and testable React browser adaptation |
-| `src/features/trends/` | Live API UI with separately marked fictional preview data |
-| `services/trends-api/` | Framework-free Node 22 HTTP service, source adapters, tests, Dockerfile |
-| `infra/original-ec2-lab/` | Read-only archive of original Terraform `.tf` files (not ready for reuse) |
-| `infra/aws/` | New, unapplied AWS host blueprint |
-| `docker/` | Nginx reverse proxy and optional Caddy HTTPS configuration |
-| `.github/workflows/ci.yml` | Build, format, tests, export links, Docker smoke checks |
+| Path                       | Purpose                                                                                |
+| -------------------------- | -------------------------------------------------------------------------------------- |
+| `src/app/`                 | Stateless Next.js route files for Home, Work, About, Contact, Resume, and each project |
+| `src/content/projects.js`  | Accurate project cases, technologies, status, and source links                         |
+| `src/components/projects/` | Artworks, paginated/filterable cards, interactive demo selection                       |
+| `src/features/snake/`      | Pure game engine and testable React browser adaptation                                 |
+| `src/features/trends/`     | Live API UI with separately marked fictional preview data                              |
+| `services/trends-api/`     | Framework-free Node 22 HTTP service, source adapters, tests, Dockerfile                |
+| `infra/original-ec2-lab/`  | Read-only archive of original Terraform `.tf` files (not ready for reuse)              |
+| `infra/aws/`               | New, unapplied AWS host blueprint                                                      |
+| `docker/`                  | Nginx reverse proxy and optional Caddy HTTPS configuration                             |
+| `.github/workflows/ci.yml` | Build, format, tests, export links, Docker smoke checks                                |
 
-Checks: `npm test`, `npm run format:check`, `npm run build`, `python3 scripts/check-export.py`, `docker compose config`, and `sh scripts/smoke-container.sh` after starting Docker. Network-dependent build or live-feed checks require connectivity. To regenerate the résumé PDF with `python scripts/create-resume.py`, install `reportlab` and DejaVu Sans regular/bold fonts locally (or provide `RESUME_FONT_REGULAR` and `RESUME_FONT_BOLD` pointing to your own installed font files); the font binaries are not included in this archive. Sample data never purports to represent a live production feed; the other interactive previews remain educational simulations.
+Checks: `npm run lint`, `npm test`, `npm run format:check`, `npm run build`, `python3 scripts/check-export.py`, `docker compose config`, and `sh scripts/smoke-container.sh` after starting Docker. Network-dependent build or live-feed checks require connectivity. To regenerate the résumé PDF with `python scripts/create-resume.py`, install `reportlab` and DejaVu Sans regular/bold fonts locally (or provide `RESUME_FONT_REGULAR` and `RESUME_FONT_BOLD` pointing to your own installed font files); the font binaries are not included in this archive. Sample data never purports to represent a live production feed; the other interactive previews remain educational simulations.
 
-*This repo includes the files required to deploy the application but does not provision AWS resources automatically. Credentials, domain DNS, live account access, and hosting bills remain under your control.*
+_This repo includes the files required to deploy the application but does not provision AWS resources automatically. Credentials, domain DNS, live account access, and hosting bills remain under your control._
+
 # portfolio2.0

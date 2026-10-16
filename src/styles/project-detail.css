@@ -84,6 +84,18 @@
   margin: 17px 0 25px;
   line-height: 1.8;
 }
-.algorithmnotes { border-left: 3px solid var(--accent); padding: 23px 30px; margin: 25px 0 46px; background: #233021; }
-.algorithmnotes h2 { font-size: 25px; margin-bottom: 15px; }
-.algorithmnotes p { font-size: 13px; line-height: 1.9; margin-top: 12px; }
+.algorithmnotes {
+  border-left: 3px solid var(--accent);
+  padding: 23px 30px;
+  margin: 25px 0 46px;
+  background: #233021;
+}
+.algorithmnotes h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.algorithmnotes p {
+  font-size: 13px;
+  line-height: 1.9;
+  margin-top: 12px;
+}

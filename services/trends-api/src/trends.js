@@ -4,7 +4,15 @@ export const TOPICS = {
   ai: ['ai', 'artificial intelligence', 'machine learning', 'llm', 'agents', 'openai', 'model'],
   cloud: ['cloud', 'aws', 'azure', 'gcp', 'kubernetes', 'terraform', 'serverless', 'devops'],
   security: ['security', 'vulnerability', 'breach', 'phishing', 'cve', 'ransomware', 'zero trust'],
-  development: ['developer', 'development', 'programming', 'software', 'javascript', 'python', 'api'],
+  development: [
+    'developer',
+    'development',
+    'programming',
+    'software',
+    'javascript',
+    'python',
+    'api',
+  ],
 };
 
 export const SOURCE_URLS = {
@@ -32,7 +40,10 @@ function validArticle(title, url, createdAt, source, description = '') {
     url: safeUrl,
     source,
     publishedAt: date.toISOString(),
-    description: String(description || '').replace(/<[^>]*>/g, '').trim().slice(0, 260),
+    description: String(description || '')
+      .replace(/<[^>]*>/g, '')
+      .trim()
+      .slice(0, 260),
   };
 }
 
@@ -47,7 +58,13 @@ export function normalizeDev(data) {
   if (!Array.isArray(data)) throw new Error('Unexpected DEV response');
   return data
     .map((item) =>
-      validArticle(item.title, item.canonical_url || item.url, item.published_at, 'DEV', item.description),
+      validArticle(
+        item.title,
+        item.canonical_url || item.url,
+        item.published_at,
+        'DEV',
+        item.description,
+      ),
     )
     .filter(Boolean);
 }
@@ -73,8 +90,10 @@ export function filterArticles(articles, { topic = 'all', query = '', limit = 20
   return articles
     .filter((item) => {
       const haystack = `${item.title} ${item.description}`.toLowerCase();
-      return (!terms.length || terms.some((term) => haystack.includes(term))) &&
-        (!search || haystack.includes(search));
+      return (
+        (!terms.length || terms.some((term) => haystack.includes(term))) &&
+        (!search || haystack.includes(search))
+      );
     })
     .slice(0, count);
 }
@@ -98,9 +117,11 @@ export function createTrendsService({ fetchFn = fetch, now = Date.now, ttlMs = 3
       ['Hacker News', SOURCE_URLS.hn, normalizeHackerNews],
       ['DEV', SOURCE_URLS.dev, normalizeDev],
     ];
-    const responses = await Promise.allSettled(tasks.map(async ([source, url, normalize]) => {
-      return { source, items: normalize(await fetchJson(url, fetchFn)) };
-    }));
+    const responses = await Promise.allSettled(
+      tasks.map(async ([source, url, normalize]) => {
+        return { source, items: normalize(await fetchJson(url, fetchFn)) };
+      }),
+    );
     const articles = [];
     const failures = [];
     responses.forEach((result, index) => {
@@ -119,7 +140,10 @@ export function createTrendsService({ fetchFn = fetch, now = Date.now, ttlMs = 3
 
   async function getFeed() {
     if (cached && cached.expiresAt > now()) return { ...cached, stale: false };
-    if (!pending) pending = refresh().finally(() => { pending = null; });
+    if (!pending)
+      pending = refresh().finally(() => {
+        pending = null;
+      });
     try {
       return { ...(await pending), stale: false };
     } catch (error) {

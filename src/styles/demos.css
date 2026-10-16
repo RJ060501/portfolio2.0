@@ -380,35 +380,154 @@ select {
   color: var(--accent);
 }
 /* Tech-trends feed: presentation is intentionally distinct from the older scraper demo. */
-.trendsintro { padding: 26px; display: flex; justify-content: space-between; gap: 25px; border-bottom: 1px solid var(--line); }
-.trendsintro h3 { font-size: 25px; line-height: 1.3; margin-bottom: 10px; }
-.trendsintro p { font-size: 12px; line-height: 1.8; max-width: 440px; }
-.trendsmodes { display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap; }
-.trendsmodes button, .trendtopics button { padding: 10px 13px; border: 1px solid var(--line); border-radius: 4px; background: transparent; font-size: 11px; }
-.trendsmodes button.active, .trendtopics button.active { border-color: var(--accent); color: var(--accent); background: #34432b; }
-.trendssearch { display: flex; flex-direction: column; gap: 12px; padding: 25px 26px 15px; }
-.trendssearch label { font-size: 11px; color: var(--muted); }
-.trendssearch > div { display: flex; gap: 10px; }
-.trendssearch input { flex: 1; font-size: 13px; }
-.trendssearch button { font-size: 12px; white-space: nowrap; }
-.trendtopics { display: flex; gap: 8px; flex-wrap: wrap; padding: 5px 26px 20px; }
-.trendsmeta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 13px 26px; border-block: 1px solid var(--line); background: #19241c; font: 10px/1.6 var(--mono); color: #9da991; }
-.trendsmeta code { overflow-wrap: anywhere; color: var(--accent); }
-.trendresults { padding: 0 26px 25px; }
-.trendresulthead { display: flex; align-items: center; justify-content: space-between; font-size: 11px; margin-top: 24px; margin-bottom: 12px; }
-.trenditem { padding: 20px 0; border-top: 1px solid var(--line); }
-.trenditemtop { display: flex; justify-content: space-between; gap: 12px; font: 9px var(--mono); text-transform: uppercase; letter-spacing: 0.5px; color: #a8bba1; }
-.trenditem h4 { font-size: 18px; line-height: 1.45; margin-top: 10px; }
-.trenditem h4 a:hover { color: var(--accent); }
-.trenditem p { font-size: 12px; margin-top: 10px; line-height: 1.75; }
-.trendsnotice { font-size: 13px; line-height: 1.8; padding: 22px 26px; }
-.trendactions { display: flex; gap: 20px; margin-top: 15px; }
+.trendsintro {
+  padding: 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid var(--line);
+}
+.trendsintro h3 {
+  font-size: 25px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.trendsintro p {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 440px;
+}
+.trendsmodes {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.trendsmodes button,
+.trendtopics button {
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  font-size: 11px;
+}
+.trendsmodes button.active,
+.trendtopics button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #34432b;
+}
+.trendssearch {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 25px 26px 15px;
+}
+.trendssearch label {
+  font-size: 11px;
+  color: var(--muted);
+}
+.trendssearch > div {
+  display: flex;
+  gap: 10px;
+}
+.trendssearch input {
+  flex: 1;
+  font-size: 13px;
+}
+.trendssearch button {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.trendtopics {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 5px 26px 20px;
+}
+.trendsmeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 26px;
+  border-block: 1px solid var(--line);
+  background: #19241c;
+  font: 10px/1.6 var(--mono);
+  color: #9da991;
+}
+.trendsmeta code {
+  overflow-wrap: anywhere;
+  color: var(--accent);
+}
+.trendresults {
+  padding: 0 26px 25px;
+}
+.trendresulthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.trenditem {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.trenditemtop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font: 9px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #a8bba1;
+}
+.trenditem h4 {
+  font-size: 18px;
+  line-height: 1.45;
+  margin-top: 10px;
+}
+.trenditem h4 a:hover {
+  color: var(--accent);
+}
+.trenditem p {
+  font-size: 12px;
+  margin-top: 10px;
+  line-height: 1.75;
+}
+.trendsnotice {
+  font-size: 13px;
+  line-height: 1.8;
+  padding: 22px 26px;
+}
+.trendactions {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
 @media (max-width: 720px) {
-  .trendsintro { flex-direction: column; padding: 20px; }
-  .trendsintro h3 { font-size: 21px; }
-  .trendssearch { padding: 20px; }
-  .trendssearch > div { flex-direction: column; }
-  .trendtopics { padding: 5px 20px 20px; }
-  .trendsmeta { padding: 13px 20px; }
-  .trendresults { padding: 0 20px 20px; }
+  .trendsintro {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .trendsintro h3 {
+    font-size: 21px;
+  }
+  .trendssearch {
+    padding: 20px;
+  }
+  .trendssearch > div {
+    flex-direction: column;
+  }
+  .trendtopics {
+    padding: 5px 20px 20px;
+  }
+  .trendsmeta {
+    padding: 13px 20px;
+  }
+  .trendresults {
+    padding: 0 20px 20px;
+  }
 }

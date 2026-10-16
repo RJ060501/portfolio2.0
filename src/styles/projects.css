@@ -380,12 +380,41 @@
   padding: 10px 14px;
   font-size: 12px;
 }
-.pagination button.current { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-.pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
-.pagination button:not(:disabled):hover { border-color: var(--accent); }
-.workmore { display: flex; justify-content: center; margin-top: 48px; }
-.innerpage { padding-top: 75px; padding-bottom: 100px; }
-.innerpage h1 { font-size: clamp(42px, 7vw, 76px); letter-spacing: -2.5px; margin: 18px 0; }
-.innerpage h1 em { color: var(--accent); }
-.innerintro { max-width: 630px; margin-bottom: 47px; font-size: 15px; line-height: 1.8; }
-#project-list { scroll-margin-top: 110px; }
+.pagination button.current {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.pagination button:not(:disabled):hover {
+  border-color: var(--accent);
+}
+.workmore {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+.innerpage {
+  padding-top: 75px;
+  padding-bottom: 100px;
+}
+.innerpage h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  letter-spacing: -2.5px;
+  margin: 18px 0;
+}
+.innerpage h1 em {
+  color: var(--accent);
+}
+.innerintro {
+  max-width: 630px;
+  margin-bottom: 47px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+#project-list {
+  scroll-margin-top: 110px;
+}

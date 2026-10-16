@@ -17,14 +17,16 @@ async function withServer(service, callback) {
 }
 
 const feed = {
-  articles: [{
-    id: 'test:1',
-    title: 'Terraform cloud security',
-    url: 'https://example.com/article',
-    source: 'test',
-    publishedAt: '2026-10-14T12:00:00.000Z',
-    description: '',
-  }],
+  articles: [
+    {
+      id: 'test:1',
+      title: 'Terraform cloud security',
+      url: 'https://example.com/article',
+      source: 'test',
+      publishedAt: '2026-10-14T12:00:00.000Z',
+      description: '',
+    },
+  ],
   fetchedAt: '2026-10-14T13:00:00.000Z',
   stale: false,
   failures: [],
@@ -55,9 +57,16 @@ test('HTTP API exposes health, topic discovery, filtering, and request validatio
 });
 
 test('HTTP API returns 503 when feed is unavailable', async () => {
-  await withServer({ getFeed: async () => { throw new Error('network'); } }, async (base) => {
-    const response = await fetch(`${base}/api/trends`);
-    assert.equal(response.status, 503);
-    assert.match((await response.json()).error, /unavailable/);
-  });
+  await withServer(
+    {
+      getFeed: async () => {
+        throw new Error('network');
+      },
+    },
+    async (base) => {
+      const response = await fetch(`${base}/api/trends`);
+      assert.equal(response.status, 503);
+      assert.match((await response.json()).error, /unavailable/);
+    },
+  );
 });
