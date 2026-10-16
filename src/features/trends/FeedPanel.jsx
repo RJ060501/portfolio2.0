@@ -83,8 +83,16 @@ export default function FeedPanel({ onAnalyze }) {
         </button>
       </div>
 
-      {busy && <p className="trendsnotice" role="status">Retrieving live articles...</p>}
-      {error && <p className="trendsnotice" role="alert">Unable to load articles: {error}</p>}
+      {busy && (
+        <p className="trendsnotice" role="status">
+          Retrieving live articles...
+        </p>
+      )}
+      {error && (
+        <p className="trendsnotice" role="alert">
+          Unable to load articles: {error}
+        </p>
+      )}
       {result?.meta?.stale && (
         <p className="trendsnotice">Sources are temporarily unavailable. Showing cached results.</p>
       )}

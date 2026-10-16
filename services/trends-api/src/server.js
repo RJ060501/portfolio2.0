@@ -60,9 +60,10 @@ function makeRateLimiter(now) {
   return function isLimited(request) {
     const forwarded = request.headers['x-forwarded-for'];
     const trustedProxy = process.env.TRUST_PROXY === 'true';
-    const client = trustedProxy && forwarded
-      ? String(forwarded).split(',')[0].trim()
-      : request.socket.remoteAddress || 'unknown';
+    const client =
+      trustedProxy && forwarded
+        ? String(forwarded).split(',')[0].trim()
+        : request.socket.remoteAddress || 'unknown';
 
     const timestamp = now();
     if (clients.size > 5000) {
@@ -86,12 +87,15 @@ function makeRateLimiter(now) {
  * Create an injectable HTTP handler so tests do not depend on live websites,
  * a running Ollama model, or a disk-backed database.
  */
-export function makeHandler(feedService = createTrendsService(), {
-  store = createStore(':memory:'),
-  articleFetcher = fetchArticle,
-  aiAnalyzer = enrichWithAI,
-  now = Date.now,
-} = {}) {
+export function makeHandler(
+  feedService = createTrendsService(),
+  {
+    store = createStore(':memory:'),
+    articleFetcher = fetchArticle,
+    aiAnalyzer = enrichWithAI,
+    now = Date.now,
+  } = {},
+) {
   const isLimited = makeRateLimiter(now);
 
   async function handleAnalyze(request, response) {
@@ -137,9 +141,8 @@ export function makeHandler(feedService = createTrendsService(), {
 
       const detected = detectTechnologies(`${article.title}\n${article.text}`);
       const technologies = recommend(detected, profile);
-      const ai = input.ai === true
-        ? await aiAnalyzer(article, { profile })
-        : { status: 'not-requested' };
+      const ai =
+        input.ai === true ? await aiAnalyzer(article, { profile }) : { status: 'not-requested' };
 
       return sendJson(response, 200, {
         data: {
@@ -153,17 +156,18 @@ export function makeHandler(feedService = createTrendsService(), {
         meta: {
           method,
           profile,
-          analysisMethod: 'dictionary + bounded evidence'
-            + (ai.status === 'ready' ? ' + Ollama enrichment' : ''),
+          analysisMethod:
+            'dictionary + bounded evidence' + (ai.status === 'ready' ? ' + Ollama enrichment' : ''),
           persisted: false,
           notice: 'Analyzed article text is not saved. Verify AI conclusions against the source.',
         },
       });
     } catch (error) {
       return sendJson(response, error instanceof ArticleError ? error.status : 502, {
-        error: error instanceof ArticleError
-          ? error.message
-          : 'Unable to analyze this article. Try pasting the text instead.',
+        error:
+          error instanceof ArticleError
+            ? error.message
+            : 'Unable to analyze this article. Try pasting the text instead.',
       });
     }
   }
@@ -194,11 +198,12 @@ export function makeHandler(feedService = createTrendsService(), {
     const query = (url.searchParams.get('query') || '').trim();
     const limit = url.searchParams.get('limit') || '20';
 
-    const invalid = !Object.hasOwn(TOPICS, topic)
-      || query.length > 100
-      || !/^\d+$/.test(limit)
-      || Number(limit) < 1
-      || Number(limit) > 50;
+    const invalid =
+      !Object.hasOwn(TOPICS, topic) ||
+      query.length > 100 ||
+      !/^\d+$/.test(limit) ||
+      Number(limit) < 1 ||
+      Number(limit) > 50;
 
     if (invalid) {
       return sendJson(response, 400, { error: 'Invalid topic, query, or limit' });
@@ -273,14 +278,15 @@ export function makeHandler(feedService = createTrendsService(), {
     return sendJson(response, 404, { error: 'Not found' });
   }
 
-  return (request, response) => Promise.resolve(route(request, response)).catch((error) => {
-    console.error('Unhandled API error:', error.message);
-    if (!response.headersSent) {
-      sendJson(response, 500, { error: 'Unexpected server error' });
-    } else {
-      response.end();
-    }
-  });
+  return (request, response) =>
+    Promise.resolve(route(request, response)).catch((error) => {
+      console.error('Unhandled API error:', error.message);
+      if (!response.headersSent) {
+        sendJson(response, 500, { error: 'Unexpected server error' });
+      } else {
+        response.end();
+      }
+    });
 }
 
 /** Store genuinely observed news every hour even if nobody opens the demo. */

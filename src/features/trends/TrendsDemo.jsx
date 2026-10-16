@@ -50,9 +50,8 @@ export default function TrendsDemo() {
         <div>
           <h3>Read the news. Understand the technology.</h3>
           <p>
-            Discover recent articles, extract known technologies, optionally identify
-            unfamiliar concepts with AI, and track real observations over time.
-            No fictional news records.
+            Discover recent articles, extract known technologies, optionally identify unfamiliar
+            concepts with AI, and track real observations over time. No fictional news records.
           </p>
         </div>
       </div>
@@ -66,13 +65,19 @@ export default function TrendsDemo() {
             onChange={(event) => setProfile(event.target.value)}
           >
             {LEARNING_PROFILES.map(({ value, label }) => (
-              <option key={value} value={value}>{label}</option>
+              <option key={value} value={value}>
+                {label}
+              </option>
             ))}
           </select>
         </label>
       </div>
 
-      <div className="trendsmodes trend-tabs" role="tablist" aria-label="Tech intelligence features">
+      <div
+        className="trendsmodes trend-tabs"
+        role="tablist"
+        aria-label="Tech intelligence features"
+      >
         {DEMO_TABS.map(({ value, label }) => (
           <button
             key={value}

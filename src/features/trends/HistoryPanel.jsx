@@ -71,8 +71,16 @@ export default function HistoryPanel({ profile }) {
         </button>
       </div>
 
-      {loading && <p className="trendsnotice" role="status">Loading collected history...</p>}
-      {error && <p className="trendsnotice" role="alert">Could not retrieve history: {error}</p>}
+      {loading && (
+        <p className="trendsnotice" role="status">
+          Loading collected history...
+        </p>
+      )}
+      {error && (
+        <p className="trendsnotice" role="alert">
+          Could not retrieve history: {error}
+        </p>
+      )}
 
       {insights && !loading && (
         <>
@@ -86,7 +94,8 @@ export default function HistoryPanel({ profile }) {
 
           {insights.data.length === 0 && (
             <p className="trendsnotice">
-              No technology mentions recorded yet. The collector needs to gather real articles first.
+              No technology mentions recorded yet. The collector needs to gather real articles
+              first.
             </p>
           )}
 
@@ -124,7 +133,9 @@ export default function HistoryPanel({ profile }) {
                   key={point.day}
                   title={`${point.day}: ${point.articles} articles`}
                 >
-                  <span style={{ height: `${Math.max(6, (point.articles / largestCount) * 100)}%` }} />
+                  <span
+                    style={{ height: `${Math.max(6, (point.articles / largestCount) * 100)}%` }}
+                  />
                   <small>{point.day.slice(5)}</small>
                 </div>
               ))
@@ -134,8 +145,8 @@ export default function HistoryPanel({ profile }) {
           </div>
 
           <p className="trend-muted">
-            Counts represent collected article mentions, not industry adoption.
-            Click a technology above to filter the chart.
+            Counts represent collected article mentions, not industry adoption. Click a technology
+            above to filter the chart.
           </p>
         </>
       )}

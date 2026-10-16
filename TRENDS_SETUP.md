@@ -140,4 +140,4 @@ Do not apply both the patch and the ZIP overlay. The patch is generated against 
 
 ## What counts as a real trend?
 
-The API counts **distinct source articles first observed by your collector**. That can demonstrate *article-discussion momentum* but **not** global industry adoption. The 7/30/90-day views use only data recorded since installation; they do not invent earlier months. Profiles weight cloud/security/software/AI categories for learning relevance; those rules are explicit heuristics and not labor-market statistics. Think of V3 as a genuine **observed technology-news intelligence** feature, not a predictive industry model.
+The API counts **distinct source articles first observed by your collector**. That can demonstrate _article-discussion momentum_ but **not** global industry adoption. The 7/30/90-day views use only data recorded since installation; they do not invent earlier months. Profiles weight cloud/security/software/AI categories for learning relevance; those rules are explicit heuristics and not labor-market statistics. Think of V3 as a genuine **observed technology-news intelligence** feature, not a predictive industry model.

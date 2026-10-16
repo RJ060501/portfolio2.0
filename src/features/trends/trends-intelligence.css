@@ -2,7 +2,8 @@
 .trend-global-controls {
   padding: 17px 26px 5px;
 }
-.trend-global-controls label, .trend-history-toolbar label {
+.trend-global-controls label,
+.trend-history-toolbar label {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -36,7 +37,9 @@
   font-size: 12px;
   color: var(--muted);
 }
-.trend-analyze-form input[type="url"], .trend-analyze-form input:not([type]), .trend-analyze-form textarea {
+.trend-analyze-form input[type='url'],
+.trend-analyze-form input:not([type]),
+.trend-analyze-form textarea {
   width: 100%;
   color: var(--text);
   background: #111a14;
@@ -64,13 +67,15 @@
   color: var(--muted);
   margin-bottom: 12px;
 }
-.trends-choice label, .trends-ai-choice {
+.trends-choice label,
+.trends-ai-choice {
   display: inline-flex;
   gap: 8px;
   align-items: center;
   font-size: 12px;
 }
-.trends-choice input, .trends-ai-choice input {
+.trends-choice input,
+.trends-ai-choice input {
   accent-color: #a8cd74;
   min-width: auto;
 }
@@ -136,7 +141,8 @@
   font-size: 14px;
   margin-top: 16px;
 }
-.trend-ai-output p, .trend-ai-output li {
+.trend-ai-output p,
+.trend-ai-output li {
   font-size: 12px;
   line-height: 1.75;
   margin-top: 10px;
@@ -173,7 +179,8 @@
   background: transparent;
   color: var(--text);
 }
-.trend-rank:hover, .trend-rank.active {
+.trend-rank:hover,
+.trend-rank.active {
   border-color: var(--accent);
   background: #293728;
 }
@@ -182,7 +189,8 @@
   margin-bottom: 5px;
   font-size: 14px;
 }
-.trend-rank small, .trend-rank > span:last-child {
+.trend-rank small,
+.trend-rank > span:last-child {
   font: 10px/1.6 var(--mono);
   color: var(--muted);
 }
@@ -222,7 +230,9 @@
   white-space: nowrap;
 }
 @media (max-width: 720px) {
-  .trend-global-controls, .trend-history, .trend-analyze-form {
+  .trend-global-controls,
+  .trend-history,
+  .trend-analyze-form {
     padding: 20px;
   }
   .trend-tabs {

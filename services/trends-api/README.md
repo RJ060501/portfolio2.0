@@ -12,15 +12,15 @@ Data retention: the database retains observed article URL/title/source/dates and
 
 ## HTTP endpoints
 
-| Endpoint | Purpose |
-| --- | --- |
-| `GET /health` | Liveness |
-| `GET /api/topics` | Valid feed categories and learning profiles |
-| `GET /api/capabilities` | AI on/off + feature availability |
-| `GET /api/trends?topic=cloud&query=&limit=20` | Live normalized HN/DEV discovery feed |
-| `POST /api/analyze` | URL OR pasted-text analysis; AI optional |
-| `GET /api/insights?profile=cloud&days=30` | Per-role recommended known technologies in observed articles |
-| `GET /api/history?days=30&technology=Kubernetes` | UTC daily article counts (optional term) |
+| Endpoint                                         | Purpose                                                      |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| `GET /health`                                    | Liveness                                                     |
+| `GET /api/topics`                                | Valid feed categories and learning profiles                  |
+| `GET /api/capabilities`                          | AI on/off + feature availability                             |
+| `GET /api/trends?topic=cloud&query=&limit=20`    | Live normalized HN/DEV discovery feed                        |
+| `POST /api/analyze`                              | URL OR pasted-text analysis; AI optional                     |
+| `GET /api/insights?profile=cloud&days=30`        | Per-role recommended known technologies in observed articles |
+| `GET /api/history?days=30&technology=Kubernetes` | UTC daily article counts (optional term)                     |
 
 Valid profiles are `cloud`, `security`, `software`, `ai`. Valid periods are `7`, `30`, `90`. The frontend uses these exact API contracts.
 

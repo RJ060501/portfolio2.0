@@ -127,7 +127,11 @@ export default function AnalyzePanel({ initialUrl, profile, aiEnabled }) {
         </button>
       </form>
 
-      {error && <p className="trendsnotice" role="alert">{error}</p>}
+      {error && (
+        <p className="trendsnotice" role="alert">
+          {error}
+        </p>
+      )}
       {result && <AnalysisResult result={result} />}
     </section>
   );
@@ -188,7 +192,9 @@ function AnalysisResult({ result }) {
             </>
           )}
           {data.ai.learningAdvice && (
-            <p><strong>Learning context:</strong> {data.ai.learningAdvice}</p>
+            <p>
+              <strong>Learning context:</strong> {data.ai.learningAdvice}
+            </p>
           )}
           <p className="trend-muted">{data.ai.warning}</p>
         </section>

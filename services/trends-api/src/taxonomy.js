@@ -36,10 +36,22 @@ export const TECHNOLOGIES = [
 ].map(([name, category, aliases]) => ({ name, category, aliases }));
 
 export const PROFILES = {
-  cloud: { label: 'Cloud / Platform Engineer', weights: { cloud: 4, security: 2, ai: 2, development: 2 } },
-  security: { label: 'Cybersecurity Engineer', weights: { security: 4, cloud: 2, ai: 2, development: 1 } },
-  software: { label: 'Software Engineer', weights: { development: 4, cloud: 2, ai: 2, security: 1 } },
-  ai: { label: 'AI / Automation Engineer', weights: { ai: 4, development: 3, cloud: 2, security: 1 } },
+  cloud: {
+    label: 'Cloud / Platform Engineer',
+    weights: { cloud: 4, security: 2, ai: 2, development: 2 },
+  },
+  security: {
+    label: 'Cybersecurity Engineer',
+    weights: { security: 4, cloud: 2, ai: 2, development: 1 },
+  },
+  software: {
+    label: 'Software Engineer',
+    weights: { development: 4, cloud: 2, ai: 2, security: 1 },
+  },
+  ai: {
+    label: 'AI / Automation Engineer',
+    weights: { ai: 4, development: 3, cloud: 2, security: 1 },
+  },
 };
 
 function escaped(phrase) {
@@ -65,7 +77,11 @@ export function detectTechnologies(text, { maxEvidence = 2 } = {}) {
     const evidence = positions.slice(0, maxEvidence).map((index) => {
       const start = Math.max(0, input.lastIndexOf('.', index - 1) + 1, index - 85);
       const nextPeriod = input.indexOf('.', index + 1);
-      const end = Math.min(input.length, nextPeriod < 0 ? index + 100 : nextPeriod + 1, index + 160);
+      const end = Math.min(
+        input.length,
+        nextPeriod < 0 ? index + 100 : nextPeriod + 1,
+        index + 160,
+      );
       return input.slice(start, end).replace(/\s+/g, ' ').trim();
     });
     results.push({ name: entry.name, category: entry.category, mentions: count, evidence });
@@ -75,9 +91,13 @@ export function detectTechnologies(text, { maxEvidence = 2 } = {}) {
 
 export function recommend(terms, profile = 'cloud') {
   const selected = PROFILES[profile] || PROFILES.cloud;
-  return terms.map((term) => ({
-    ...term,
-    relevanceScore: (selected.weights[term.category] || 1) * 20 + Math.min(term.mentions || term.articles || 0, 15),
-    whyLearn: `${term.name} is relevant to ${selected.label.toLowerCase()} work. Explore the cited articles and validate its relevance to your current goals.`,
-  })).sort((a, b) => b.relevanceScore - a.relevanceScore);
+  return terms
+    .map((term) => ({
+      ...term,
+      relevanceScore:
+        (selected.weights[term.category] || 1) * 20 +
+        Math.min(term.mentions || term.articles || 0, 15),
+      whyLearn: `${term.name} is relevant to ${selected.label.toLowerCase()} work. Explore the cited articles and validate its relevance to your current goals.`,
+    }))
+    .sort((a, b) => b.relevanceScore - a.relevanceScore);
 }
