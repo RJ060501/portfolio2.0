@@ -40,5 +40,5 @@ for f, p in pages.items():
 assert not errors, '\n'.join(errors)
 assert len(list((root / 'projects').glob('*/index.html'))) == 8
 assert all((root / name / 'index.html').exists() for name in ('work', 'about', 'contact'))
-assert (root / 'Ryan_Russell_Resume.pdf').stat().st_size > 1000
+assert (root / 'RRResume.pdf').stat().st_size > 1000
 print(f'Export checks passed: {len(pages)} HTML pages, 8 projects, all local links/assets/fragments, resume PDF.')
